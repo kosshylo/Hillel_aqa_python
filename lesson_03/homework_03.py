@@ -1,8 +1,6 @@
-from calendar import month
-
 alice_in_wonderland: str = '"Would you tell me, please, which way I ought to go from here?"\n"That depends a good deal on where you want to get to," said the Cat.\n"I don\'t much care where ——" said Alice.\n"Then it doesn\'t matter which way you go," said the Cat.\n"—— so long as I get somewhere," Alice added as an explanation.\n"Oh, you\'re sure to do that," said the Cat, "if you only walk long enough."'
 # task 01 == Розділіть змінну alice_in_wonderland так, щоб вона займала декілька фізичних лінії
-#print(alice_in_wonderland)
+print(f'\n task 01:\n{alice_in_wonderland}')
 # task 02 == Знайдіть та відобразіть всі символи одинарної лапки (') у тексті
 selected: list  = []
 for  apostrophe in alice_in_wonderland:
@@ -14,7 +12,7 @@ for  apostrophe in alice_in_wonderland:
 # print(selected)
 
 # task 03 == Виведіть змінну alice_in_wonderland на друк
-print(alice_in_wonderland)
+print(f'\n task 03:\n{alice_in_wonderland}')
 
 """
     # Задачі 04 -10:
@@ -32,7 +30,7 @@ square_black_sea: int = 436402
 square_azov_sea: int = 37800
 total_square_both_seas: int = square_black_sea + square_azov_sea
 total_square_both_seas: str = str(total_square_both_seas)
-print(f'total_square_both_seas: {total_square_both_seas[:3]} {total_square_both_seas[3:]} km2')
+print(f'\n task 04:\ntotal_square_both_seas: {total_square_both_seas[:3]} {total_square_both_seas[3:]} km2')
 
 # task 05
 """
@@ -58,7 +56,7 @@ first = first_second - second
 third = second_third - second
 
 # Виведемо результати
-print(f"На першому складі: {str(first)[:3]} {str(first)[3:]} товарів")
+print(f"\n task 05:\nНа першому складі: {str(first)[:3]} {str(first)[3:]} товарів")
 print(f"На другому складі: {str(second)[:2]} {str(second)[2:]} товарів")
 print(f"На третьому складі: {str(third)[:3]} {str(third)[3:]} товарів")
 
@@ -71,7 +69,7 @@ print(f"На третьому складі: {str(third)[:3]} {str(third)[3:]} т
 """
 monthes: int = int(1.5*12)
 PC_cost: int = 1179*monthes
-print(f"Вартість комп’ютера: {str(PC_cost)[:2]} {str(PC_cost)[2:]} грн")
+print(f'\n task 06:\nВартість комп’ютера: {str(PC_cost)[:2]} {str(PC_cost)[2:]} грн')
 
 # task 07
 """
@@ -80,7 +78,7 @@ a) 8019 : 8     d) 7248 : 6
 b) 9907 : 9     e) 7128 : 5
 c) 2789 : 5     f) 19224 : 9
 """
-print(f'залишок від ділення {8019%8}')
+print(f'\n task 07:\nзалишок від ділення {8019%8}')
 print(f'залишок від ділення {9907%9}')
 print(f'залишок від ділення {2789%5}')
 print(f'залишок від ділення {7248%6}')
@@ -108,7 +106,7 @@ total = 0
 while i <= 4: # <len(list_amount)
     total += list_amount[i] * list_price[i]
     i += 1
-print(f'Всього {total} грн знадобиться для даного замовлення ')
+print(f'\n task 08:\nВсього {total} грн знадобиться для даного замовлення ')
 
 
 # task 09
@@ -124,7 +122,7 @@ one_page = 8
 if all_photos%one_page==0:
     total_pages_needed = all_photos//one_page
 else:    total_pages_needed = all_photos//one_page +1
-print(f'total_pages_needed {total_pages_needed}')
+print(f'\n task 09:\ntotal_pages_needed {total_pages_needed}')
 
 # task 10
 """
@@ -142,10 +140,10 @@ count_distance: int = 100
 litrs_per_100km: int = 9
 tank: int = 48
 total_litrs_needed = distance/100*litrs_per_100km
-print(f'{total_litrs_needed} літрів бензину знадобиться для такої подорожі')
+print(f'\n task 10:\n1) {total_litrs_needed} літрів бензину знадобиться для такої подорожі')
 
 #the min will be, if they had full tank before start travel:
 if total_litrs_needed%tank==0:
-    total_tanks = total_litrs_needed//tank -1 # -1 , as the min will be, if they had full tank before start travel
-else:    total_tanks = total_litrs_needed//tank # look comment above
-print(f'total_pages_needed {total_tanks}')
+    min_tanks_needed = total_litrs_needed//tank -1 # -1 , as the min will be, if they had full tank before start travel
+else:    min_tanks_needed = total_litrs_needed//tank # look comment above
+print(f'2) min_tanks_needed {min_tanks_needed}')
