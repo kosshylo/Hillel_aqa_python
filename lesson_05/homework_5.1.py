@@ -1,16 +1,3 @@
-# string
-# list
-# tuple
-# dict
-
-my_name = 'Denys ' # має 6 елементів 0,1,2,3,4,5,6(пробіл)
-my_list = ['D', 'e', 'n', 'y', 's'] # має 5 елементів 0,1,2,3,4
-my_typle = ('D', 'e', 'n', 'y', 's') # має 5 елементів 0,1,2,3,4
-my_dict = {'D':1, 'e': 'asd'} # має 2 елементів,  ('D', 1), ('e', 'asd')
-
-# I had
-#print ('main_var: dict = {'mark_car'=key : car_characteristics: tuple
-
 # Exists some car data with color, year, engine_volume, car type , price
 # We have search_criteria as tuple of ( year>= , engine_volume >= , price<=)
 # write code that will help us to get cars that satisfy search_criteria.
@@ -60,26 +47,18 @@ car_data = {
 search_criteria = (2017, 1.6, 36000)
 
 
-
-
-# #car_criteria_list = {}
-# for key, value in car_data.items():
-# # We have search_criteria as tuple of ( year>= , engine_volume >= , price<=)
-# #    if ((value[1] >= 2017) & (value[2] >= 1.6) & (value[3]<=36000)):
-#     if (value[1] >= 2017 and value[2] >= 1.6 and value[3] <= 36000):
-#     car_criteria_list[key] = value
-# #    car_criteria_list = {key:value}
-#     print(f'{key}: {value}')
-
 car_criteria_list = {}
-
 for key, value in car_data.items():
 # We have search_criteria as tuple of ( year>= , engine_volume >= , price<=)
-    if (value[1] >= 2017 and value[2] >= 1.6 and value[4] <= 36000):
-
-        car_criteria_list[key] = value
- #       car_criteria_list[key] = sorted(tuple(value[4]))
- #       sorted_by_price_list = sorted(value[4])
+#   if (value[1] >= 2017 and value[2] >= 1.6 and value[4] <= 36000):
+    if (value[1] >= search_criteria[0] and value[2] >= search_criteria[1] and value[4] <= search_criteria[-1]):
         car_criteria_list[key] = value
         print(f'{key}: {value}')
 
+sorted_cars_list = sorted(car_criteria_list.items(), key=lambda x: x[1][-1])
+# key=lambda x // per what var we sort
+# x = ("Toyota", ("blue", 2021, 1.6, "hatchback", 25000))
+# x[1] = value of dict ; [-1] per last_id value
+
+for car, details in sorted_cars_list[:5]:
+  print(f'{car}: {details}')
