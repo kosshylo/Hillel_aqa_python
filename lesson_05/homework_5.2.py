@@ -39,10 +39,14 @@ your_data_list = []
 
 your_data_list.append(('Kostia', 'Shylo', '35', 'QA Engineer', 'Cambridge'))
 your_people_records = your_data_list + people_records
+print("_" * 100)
+print("\n task1:")
 print(f'Your own list people records list : {your_people_records}')
 
 # 2-nd part
 # 2 - In modified list swap elements with indexes 1 and 5 (1<->5). Print result
+print("_" * 100)
+print("\n task2:")
 # before:
 print("Before:")
 i = 0
@@ -51,7 +55,7 @@ for people in your_people_records:
     i += 1
 
 your_people_records[1] , your_people_records[5] = your_people_records[5], your_people_records[1]
-print("After Swap(1<->5):")
+print("\n After Swap(1<->5):")
 i = 0
 for people in your_people_records:
     print(f' {i}: {people}')
@@ -59,3 +63,18 @@ for people in your_people_records:
 
 # 3 - check that all people in modified list with records indexes 6, 10, 13
 #   have age >=30. Print condition check result
+print("_" * 100)
+print("\n task3:")
+
+index = [6, 10, 13]
+
+result: bool = True
+for i in index:
+    result = result and (your_people_records[i][2] >= 30)
+
+if result == True:
+    print ("All people in modified list are older than 30")
+else:
+    print("Some people is younger than 30")
+
+print("_" * 100)
