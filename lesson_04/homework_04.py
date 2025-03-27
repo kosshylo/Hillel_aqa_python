@@ -65,7 +65,7 @@ second_index = adwentures_of_tom_sawer.find("Tom", first_index + 1)
 
 if second_index != -1:
     print("-" * 100)
-    print(f'\n task7:\nСлово "Tom" вдруге зустрічається на позиції: {second_index}')
+    print(f'\n task6:\nСлово "Tom" вдруге зустрічається на позиції: {second_index}')
 else:
     print("-" * 100)
     print('\n task6:\nСлово "Tom" зустрічається менше двох разів.')
@@ -75,20 +75,35 @@ else:
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-atsk7_adwentures_of_tom_sawer = adwentures_of_tom_sawer.split(".")
-#adwentures_of_tom_sawer_sentences = None
-print(f'\n task7:\n{atsk7_adwentures_of_tom_sawer}')
+adwentures_of_tom_sawer_sentences = None
+adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.rstrip(".").split(".")
+print("-" * 100)
+print(f'\n task7:\n{adwentures_of_tom_sawer_sentences}')
+
+
 # task 08
 """ Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
 Перетворіть рядок у нижній регістр.
 """
-
+print("-" * 100)
+print(f'\n task8:\n{adwentures_of_tom_sawer_sentences[3].lower()}')
 
 # task 09
 """ Перевірте чи починається якесь речення з "By the time".
 """
-
+print("-" * 100)
+print("\n task9:")
+# Перевірка, чи починається якесь речення з "By the time"
+for sentece in adwentures_of_tom_sawer_sentences:
+    if sentece.startswith("By the time"):
+        print(f'\nРеченя:{sentece} починається з "By the time"')
+else:
+    print("Жоден рядок не починається з 'By the time'")
 
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
+words_list_last_sentence = adwentures_of_tom_sawer_sentences[-1].split()
+print("-" * 100)
+print (adwentures_of_tom_sawer_sentences[-1])
+print(f'\n task10:\nКількість слів останнього речення: "{len(adwentures_of_tom_sawer_sentences[-1].split())}"')
