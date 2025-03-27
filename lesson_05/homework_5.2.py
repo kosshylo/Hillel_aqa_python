@@ -57,3 +57,5 @@ for people in your_people_records:
     print(f' {i}: {people}')
     i += 1
 
+# 3 - check that all people in modified list with records indexes 6, 10, 13
+#   have age >=30. Print condition check result
