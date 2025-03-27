@@ -46,6 +46,7 @@ car_data = {
 }
 search_criteria = (2017, 1.6, 36000)
 
+# solution:----------------
 
 car_criteria_list = {}
 for key, value in car_data.items():
