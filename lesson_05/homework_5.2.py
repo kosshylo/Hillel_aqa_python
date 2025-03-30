@@ -48,11 +48,11 @@ print(f'Your own list people records list : {your_people_records}')
 print("_" * 100)
 print("\n task2:")
 # before:
-print("Before:")
-i = 0
-for people in your_people_records:
-    print(f' {i}: {people}')
-    i += 1
+# print("Before:")
+# i = 0
+# for people in your_people_records:
+#     print(f' {i}: {people}')
+#     i += 1
 
 your_people_records[1] , your_people_records[5] = your_people_records[5], your_people_records[1]
 print("\n After Swap(1<->5):")
@@ -66,15 +66,26 @@ for people in your_people_records:
 print("_" * 100)
 print("\n task3:")
 
+# index = [6, 10, 13]
+#
+# result: bool = True
+# for i in index:
+#     result = result and (your_people_records[i][2] >= 30)
+#
+# if result == True:
+#     print ("All people in modified list are older than 30")
+# else:
+#     print("Some people is younger than 30")
+
 index = [6, 10, 13]
+records_over_30: list[bool] = []
 
-result: bool = True
 for i in index:
-    result = result and (your_people_records[i][2] >= 30)
+    records_over_30.append(your_people_records[i][2] >= 30)
 
-if result == True:
-    print ("All people in modified list are older than 30")
+if len(records_over_30) == len(index):
+    print(f'{True}: All people in the modified list are older than 30')
 else:
-    print("Some people is younger than 30")
+    print(f'{False}: Some people are younger than 30')
 
 print("_" * 100)
