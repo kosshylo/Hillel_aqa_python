@@ -9,5 +9,4 @@ entred_str: str = input("Please print your string: ")
 str_to_set = set(entred_str)
 unic_elements = len(str_to_set)
 answer: bool = unic_elements >10
-
 print(f'"{answer}": Унікальних символів > 10')
