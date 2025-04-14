@@ -7,9 +7,10 @@ print("\n task_7.1:")
 """
 def multiplication_table(number):
     '''
-    #multiplication_table >= 25
+    returning multiplication table while product >= 25
+    multiplication_table >= 25
     :param number: input value
-    :return:
+    :return: multiplication table while product >= 25
     '''
     # Initialize the appropriate variable
     multiplier = 1
@@ -36,20 +37,73 @@ print("\n task_7.2:")
 # task 2
 """  Написати функцію, яка обчислює суму двох чисел.
 """
+def sum_func(a: int | float, b: int | float) -> int | float:
+    '''
+    returning sum of two numbers rounded to 2 decimal places
+    :param a: fisrt number
+    :param b: second number 
+    :return: sum of two numbers
+    '''
+    return round(a + b, 2)
 
+print( sum_func(3.33,4.44))
 
+print("_" * 100)
+print("\n task_7.3:")
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
 """
+def arithmetic_mean_func(args: list[int | float]) -> int | float:
+    '''
+    arithmetic mean function
+    :param args: list of int|float numbers
+    :return: arithmetic mean
+    '''
+    result: float = 0
+    for element in args:
+        result += element
+    length: int = len(args)
+    return round(result / length, 2)
 
+#test
+input_list: list = [1,7,9,3,33]
+print(arithmetic_mean_func(input_list))
+
+print("_" * 100)
+print("\n task_7.4:")
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
+def revers_order_func(args: str) -> str:
+    '''
+    revers order function
+    :param args: input string
+    :return: input string in reversed order
+    '''
+    return args[::-1]
 
+print(revers_order_func("Hello World!"))
+
+print("_" * 100)
+print("\n task_7.5:")
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
 """
+def longest_word(args: list[str]) -> str:
+    '''
+    returning the longest word
+    :param args: input list of words
+    :return: the longest word
+    '''
 
+    result: list[str] = []
+    for word in args:
+        if len(result) < len(word):
+            result=word
+    return result
+
+input_list: list[str] = ["World", "Hello", "Automation"]
+print(longest_word(["World", "Hello", "Automation"]))
 # task 6
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
