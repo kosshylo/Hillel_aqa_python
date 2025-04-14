@@ -1,3 +1,7 @@
+from faker import Faker
+fake = Faker()
+
+
 print("_" * 100)
 print("\n task_7.1:")
 # task 1
@@ -53,34 +57,34 @@ print("\n task_7.3:")
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
 """
-def arithmetic_mean_func(args: list[int | float]) -> int | float:
+def arithmetic_mean(numbers_list: list[int | float]) -> int | float:
     '''
     arithmetic mean function
-    :param args: list of int|float numbers
+    :param numbers_list: list of int|float numbers
     :return: arithmetic mean
     '''
     result: float = 0
-    for element in args:
+    for element in numbers_list:
         result += element
-    length: int = len(args)
+    length: int = len(numbers_list)
     return round(result / length, 2)
 
 #test
 input_list: list = [1,7,9,3,33]
-print(arithmetic_mean_func(input_list))
+print(arithmetic_mean(input_list))
 
 print("_" * 100)
 print("\n task_7.4:")
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
-def revers_order_func(args: str) -> str:
+def revers_order_func(input_str: str) -> str:
     '''
     revers order function
-    :param args: input string
+    :param input_str: input string
     :return: input string in reversed order
     '''
-    return args[::-1]
+    return input_str[::-1]
 
 print(revers_order_func("Hello World!"))
 
@@ -102,27 +106,82 @@ def longest_word(args: list[str]) -> str:
             result=word
     return result
 
-input_list: list[str] = ["World", "Hello", "Automation"]
-print(longest_word(["World", "Hello", "Automation"]))
+input_list: list[str] = fake.words(nb=5)
+# input_list: list[str] = ["World", "Hello", "Automation"]
+print(f'ínput list of words: {input_list}')
+print(f'the longest word from input list: {longest_word(input_list)}')
+
+print("_" * 100)
+print("\n task_7.6:")
 # task 6
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
 не є підрядком першого рядка."""
-def find_substring(str1, str2):
-
-    return -1
+def find_substring(str1: str, str2: str) -> int:
+    '''
+    returning index where substring is found,
+    :param str1: selected/main string
+    :param str2: searched substring
+    :return: index where substring is found,
+             or Return -1 on failure.
+    '''
+    return str1.find(str2)
 
 str1 = "Hello, world!"
 str2 = "world"
-print(find_substring(str1, str2)) # поверне 7
+print(f"{str1 = }")
+print(f"{str2 = }")
+print(f'index: {find_substring(str1, str2)}\n') # поверне 7
 
 str1 = "The quick brown fox jumps over the lazy dog"
 str2 = "cat"
-print(find_substring(str1, str2)) # поверне -1
+print(f"{str1 = }")
+print(f"{str2 = }")
+print(f'index: {find_substring(str1, str2)}') # поверне -1
 
 # task 7
+'''Порахувати кількість унікальних символів в строці. Якщо їх більше 10 - вивести в консоль True,
+інакше - False. Строку отримати за допомогою функції input().'''
+from pickle import FALSE
+
+print("_" * 100)
+print("\n task_7.7: Порахувати кількість унікальних символів в строці")
+
+def unic_symbols_func(input_str: str) -> bool:
+    '''
+    Returning is unic symbols > 10
+    :param input_str: input string
+    :return: True or False of unic symbols > 10
+    '''
+    str_to_set = set(input_str)
+    unic_elements = len(str_to_set)
+    return unic_elements > 10
+
+input_str: str = input("Please print your string: ")
+print(f'"{unic_symbols_func(input_str)}": Унікальних символів > 10')
+
 # task 8
+'''Є ліст з числами, порахуйте сумму усіх ПАРНИХ чисел в цьому лісті.'''
+print("_" * 100)
+print("\n task_7.8:")
+
+def sum_even(numbers_list: list[int]) -> int:
+    '''
+    Returning sum of all EVEN numbers in list
+    :param numbers_list: input numbers list
+    :return: sum of all EVEN numbers in list
+    '''
+
+    result = 0
+    for number in numbers_list:
+        if number % 2 == 0:
+            result += number
+    return result
+
+input_list: list = [1, 4, 7, 9, 2, 12, 11]
+print(f'Сума усіх ПАРНИХ чисел в цьому лісті: {sum_even(input_list)}')
 # task 9
+
 # task 10
 """  Оберіть будь-які 4 таски з попередніх домашніх робіт та
 перетворіть їх у 4 функції, що отримують значення та повертають результат.
