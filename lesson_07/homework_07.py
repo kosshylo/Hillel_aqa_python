@@ -180,9 +180,63 @@ def sum_even(numbers_list: list[int]) -> int:
 
 input_list: list = [1, 4, 7, 9, 2, 12, 11]
 print(f'Сума усіх ПАРНИХ чисел в цьому лісті: {sum_even(input_list)}')
+
 # task 9
+'''Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum'].
+ Напишіть код, який свормує новий list (наприклад lst2),
+ який містить лише змінні типу стрінг, які присутні в lst1.
+ Данні в лісті можуть бути будь якими'''
+
+print("_" * 100)
+print("\n task_7.9:")
+def select_str_items(data_list: list)->list[str]:
+    '''
+    Choose only str type of data
+    :param array_data: input data
+    :return: list of string data
+    '''
+    lst2 = [element for element in data_list if isinstance(element, str)]
+    return lst2
+
+
+lst1: list = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
+print(select_str_items(lst1))
 
 # task 10
+'''ДЗ 6.2. Цикл “Дочекайся літери”
+Напишіть цикл, який буде вимагати від користувача ввести слово,
+ в якому є літера "h" (враховуються як великі так і маленькі).
+Цикл не повинен завершитися, якщо користувач ввів слово без букви "h".'''
+
+
+print("_" * 100)
+print("\n task_7.10:")
+
+
+def wait_letter(letter: str) -> None:
+    '''
+    Function stops if found the letter
+    :param letter: searched element
+    :return: nothing
+    '''
+    while True:
+        entered_str: str = input(
+            "Please enter your sentence. "
+            "A mandatory condition for accepting your sentence is the presence of a word with the letter "
+            f"{letter}, regardless of case: "
+        )
+        if letter.lower() in entered_str.lower():
+            print(f'Thank you! You entered a word with the letter "{letter}".')
+            break
+        else:
+            print(f'Error: Your sentence must include the letter "{letter}". Please try again.')
+
+letter1: str = "l"
+wait_letter(letter1)
+
+
+
+
 """  Оберіть будь-які 4 таски з попередніх домашніх робіт та
 перетворіть їх у 4 функції, що отримують значення та повертають результат.
 Обоязково документуйте функції та дайте зрозумілі імена змінним.
