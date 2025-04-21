@@ -37,10 +37,10 @@ class TestMyFunctionsUnits(unittest.TestCase):
     def test8_SumNumbersFromString_string_with_float(self):
         self.assertEqual("Не можу це зробити!", sum_numbers_from_string("1,2,3.5,4"))
 
-    def test9_Pos_UnicSymbolsMoreThan10(self):
+    def test9_Pos_IfStringUniqueMore10(self):
         self.assertTrue(unic_symbols_func("abcdefghijklm"))
 
-    def test_Neg_UnicSymbolsMoreThan10(self):
+    def test_Neg_IfStringUniqueMore10(self):
         self.assertFalse(unic_symbols_func("abcabcabc"))
 
 if __name__ == '__main__':
