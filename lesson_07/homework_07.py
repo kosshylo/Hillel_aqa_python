@@ -171,12 +171,12 @@ def sum_even(numbers_list: list[int]) -> int:
     :param numbers_list: input numbers list
     :return: sum of all EVEN numbers in list
     '''
-
-    result = 0
-    for number in numbers_list:
-        if number % 2 == 0:
-            result += number
-    return result
+    return sum([number for number in numbers_list if number % 2 == 0])
+    # result = 0
+    # for number in numbers_list:
+    #     if number % 2 == 0:
+    #         result += number
+    # return result
 
 input_list: list = [1, 4, 7, 9, 2, 12, 11]
 print(f'Сума усіх ПАРНИХ чисел в цьому лісті: {sum_even(input_list)}')
